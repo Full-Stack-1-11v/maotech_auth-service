@@ -8,6 +8,6 @@
 
 ## Endpoints
 
-/register
-/login
-/inicio
+localhost:8081/register\
+localhost:8081/login\
+localhost:8081/inicio
