@@ -52,8 +52,8 @@ public class AuthController {
         return jwt;
     }
 
-    @GetMapping("/hello")
+    @GetMapping("/inicio")
     public String hello() {
-        return "Hello, World!";
+        return "Ingreso Correcto";
     }
 }
