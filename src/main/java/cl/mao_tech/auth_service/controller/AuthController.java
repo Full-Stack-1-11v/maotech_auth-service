@@ -43,10 +43,10 @@ public class AuthController {
     @PostMapping("/login")
     public String loginUser(@RequestBody AuthenticationRequest authenticationRequest) throws Exception {
         authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(authenticationRequest.getMail(), authenticationRequest.getPassword())
+                new UsernamePasswordAuthenticationToken(authenticationRequest.getEmail(), authenticationRequest.getPassword())
         );
 
-        final UserDetails userDetails = userService.loadUserByUsername(authenticationRequest.getMail());
+        final UserDetails userDetails = userService.loadUserByUsername(authenticationRequest.getEmail());
         final String jwt = jwtUtil.generateToken(userDetails);
 
         return jwt;
@@ -54,6 +54,6 @@ public class AuthController {
 
     @GetMapping("/inicio")
     public String hello() {
-        return "Ingreso Correcto";
+        return "Ingreso correcto";
     }
 }
